@@ -1,3 +1,20 @@
+@import '../../style/variables';
+
 .group {
-  
+  margin-bottom: 30px;
+
+  border: 2px solid $gray;
+
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 25px;
+
+    background-color: $gray;
+
+    color: white;
+    font-size: $base-font-size;
+  }
 }

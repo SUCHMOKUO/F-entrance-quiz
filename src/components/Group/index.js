@@ -1,7 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import './index.scss'
+import './index.scss';
 
-export default function Group() {
-  return <div className="group"></div>
+export default function Group(props) {
+  const { name, children } = props;
+
+  return (
+    <div className="group">
+      <h3>{name}</h3>
+      {children}
+    </div>
+  );
 }
