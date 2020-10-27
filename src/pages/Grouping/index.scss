@@ -1,3 +1,9 @@
+@import '../../style/variables';
+
 .grouping {
   height: 100%;
+
+  padding: 20px;
+
+  background-color: $bg-gray;
 }
