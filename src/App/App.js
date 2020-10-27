@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import Grouping from '../pages/Grouping';
+
 import './App.scss';
 
 class App extends Component {
   render() {
     return (
-      <div data-testid="app" className="App">
-        Hello World
+      <div className="page-container">
+        <Grouping />
       </div>
     );
   }
