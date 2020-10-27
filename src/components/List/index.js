@@ -9,17 +9,27 @@ function Add(props) {
   const [value, setValue] = useState('');
 
   const handleInput = (event) => {
-    setValue(event.target.value, (latestValue) => {
-      if (event.key === 'Enter') {
-        onAdd(latestValue);
-      }
-    });
+    setValue(event.target.value);
+  };
+
+  const handleKeyUp = (event) => {
+    if (event.key === 'Enter' && value) {
+      onAdd(value);
+      setInputting(false);
+    }
   };
 
   return (
     <div className="list-add-button">
       {inputting ? (
-        <input value={value} onInput={handleInput} />
+        <input
+          value={value}
+          onChange={handleInput}
+          onKeyUp={handleKeyUp}
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus
+          onBlur={() => setInputting(false)}
+        />
       ) : (
         <button type="button" onClick={() => setInputting(true)}>
           {text}
@@ -37,7 +47,7 @@ export default function List(props) {
       {data.map((item) => (
         <Item key={item.id} text={renderText(item)} />
       ))}
-      {addable ?? <Add text={addButtonText} onAdd={onAdd} />}
+      {addable ? <Add key={Math.random()} text={addButtonText} onAdd={onAdd} /> : null}
     </div>
   );
 }

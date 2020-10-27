@@ -13,13 +13,23 @@ export default function Grouping() {
     });
   };
 
+  const addStudent = (student) => {
+    httpClient.post('/students', student).then(fetchStudents);
+  };
+
+  const onAddStudent = (name) => {
+    addStudent({ name });
+  };
+
   useEffect(fetchStudents, []);
 
   return (
     <div className="grouping">
       <h2>学员列表</h2>
       <List
-        addable={false}
+        addable
+        onAdd={onAddStudent}
+        addButtonText="+ 添加学员"
         data={students}
         renderText={(student) => `${student.id}. ${student.name}`}
       />

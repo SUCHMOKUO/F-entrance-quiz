@@ -7,9 +7,10 @@ const baseRequestSetting = {
 export const httpClient = {
   async getData(fetchPromise) {
     const response = await fetchPromise;
+
     const data = await response.json();
 
-    if (response.status < 200 || response.status >= 300) {
+    if (!response.ok) {
       throw new Error(data.message || '业务错误');
     }
 
