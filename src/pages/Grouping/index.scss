@@ -7,3 +7,27 @@
 
   background-color: $bg-gray;
 }
+
+.grouping-title-container {
+  display: flex;
+  align-items: center;
+
+  height: 100px;
+
+  .grouping-button {
+    height: 35px;
+    width: 110px;
+
+    margin-left: auto;
+
+    background-color: $primary-color;
+    border: 0;
+    outline: none;
+
+    color: white;
+    font-weight: bolder;
+    font-size: $base-font-size;
+
+    cursor: pointer;
+  }
+}
