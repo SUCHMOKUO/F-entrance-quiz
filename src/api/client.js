@@ -1,5 +1,5 @@
 export const BASE_URL = 'http://localhost:8080';
-
+// TODO GTB-知识点: - 跨域放到后端去处理
 const baseRequestSetting = {
   mode: 'cors',
 };

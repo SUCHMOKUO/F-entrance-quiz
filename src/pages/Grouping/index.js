@@ -55,11 +55,13 @@ export default function Grouping() {
         </button>
       </div>
       {groups.map((group) => (
+        // TODO GTB-知识点: - 最好使用group.id作为key
+
         <Group key={group.name} name={group.name}>
           <List addable={false} data={group.students} renderText={itemTextRender} />
         </Group>
       ))}
-
+      {/* // TODO GTB-知识点: - 学员列表应该单独再抽取一个组件，而且学员列表组件应该和Group组件是sibling的关系，而不是父子关系 */}
       <h2>学员列表</h2>
       <List
         addable
